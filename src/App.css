@@ -1,0 +1,152 @@
+.image-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr); /* Móvil: 2 columnas */
+  padding: 10px;
+  justify-items: center;
+}
+
+.image-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-card img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.image-card span {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+}
+
+/* Fondo semi-transparente */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Spinner centrado */
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.header-container-up input{
+    font-size: 16px;
+    width: 200px;
+    padding: 8px;
+}
+
+.header-container-down{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Movil */
+@media (min-width: 280px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 columnas */
+  }
+
+.header-container-down{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .header-container-up label{
+    font-size: 16px;
+}
+
+  .button-download {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+
+  .header-container-up label{
+    font-size: 24px;
+  }
+
+  .header-container-up input{
+    font-size: 24px;
+    width: 400px;
+    padding: 8px;
+  }
+
+  button {
+  font-size: 1.3em;
+  background-color: #2d2e35;
+  margin-left: 10px;
+  }
+
+  .button-download {
+  font-size: 24px;
+  margin-top: 15px;
+  }
+
+  h1 {
+    font-size: 3.2em;
+  }
+}
+
+/* Escritorio grande */
+@media (min-width: 1200px) {
+  .image-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  }
+
+    .button-download {
+    font-size: 24px;
+  }
+}
