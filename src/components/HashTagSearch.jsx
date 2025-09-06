@@ -29,7 +29,7 @@ export function HashtagSearch({ onSearch }) {
         className="button-reset reset"
         onClick={() => window.location.reload()} 
       >
-        <span>🔄d</span>Reset
+        <span>🔄 </span>Reset
       </button>
     </form>
     <label htmlFor="search">
