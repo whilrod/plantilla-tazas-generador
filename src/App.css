@@ -87,24 +87,24 @@
   }
 
   h2 {
-    font-size: 1.2rem;
-    color: rgb(139, 245, 245);
+    font-size: 24px;
+    color: rgb(70, 133, 133);
   }
 
   .header-container-up input {
-    font-size: 14px;
-    width: 200px;
+    font-size: 18px;
+    width: 250px;
     padding: 4px;
   }
 
   .header-container-up label {
-    font-size: 10px;
+    font-size: 14px;
     color: #a7a7aa;
   }
 
   .button-reset, button {
     padding: 6px;
-    font-size: 16px;
+    font-size: 18px;
     margin: 8px;
     cursor: pointer;
   }
