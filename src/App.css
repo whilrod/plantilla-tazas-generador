@@ -88,13 +88,13 @@
 
   h2 {
     font-size: 24px;
-    color: rgb(70, 133, 133);
+    color: rgb(116, 204, 204);
   }
 
   .header-container-up input {
     font-size: 18px;
     width: 250px;
-    padding: 4px;
+    padding: 8px;
   }
 
   .header-container-up label {
