@@ -25,9 +25,14 @@ export function HashtagSearch({ onSearch }) {
       >
         Buscar
       </button>
-      
+      <button 
+        className="button-reset reset"
+        onClick={() => window.location.reload()} 
+      >
+        <span>🔄d</span>Reset
+      </button>
     </form>
-    <label for="search" style={{ color:"gray"}}>
+    <label htmlFor="search">
         Escribe hashtags separados por coma (<b style={{color:"yellow"}}>,</b>) <i>ejemplo: mujer,feliz_dia</i>
         </label>
     </>
