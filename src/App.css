@@ -70,6 +70,19 @@
   flex-wrap: wrap;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination > button {
+  border-radius: 8px;
+  background-color: #bebebe;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -82,13 +95,12 @@
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-top: 3px;
   }
 
   h2 {
     font-size: 24px;
-    color: rgb(116, 204, 204);
   }
 
   .header-container-up input {
@@ -138,7 +150,7 @@
 
   .button-reset {
     padding: 5px;
-    font-size: 19px;
+    font-size: 22px;
     margin-left: 20px;
   }
 

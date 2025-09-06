@@ -25,6 +25,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: #213547;
 }
 
 h1 {
@@ -32,14 +33,18 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  color: rgb(43 191 191);
+}
+
 button {
-  border-radius: 8px;
+  border-radius: 50%;
   border: 1px solid #32313d;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #17161a;
+  background-color: #fffab8;
   cursor: pointer;
   transition: border-color 0.25s;
   margin-left: 1rem;
@@ -89,8 +94,9 @@ button:focus-visible {
 .button-download {
   background-color: rgb(182, 238, 126);
   color: #333041;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
+  border-radius: 12px;
 }
 
 .loader {
@@ -107,11 +113,11 @@ button:focus-visible {
 
 .button-reset {
   margin-left: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 5px 5px;
   border: 1px solid rgb(204, 204, 204);
-  border-radius: 8px;
+  border-radius: 50%;
   cursor: pointer;
-  background-color: rgb(206, 103, 103);
+  background-color: rgb(187, 5, 204);
 }
 
 reset {

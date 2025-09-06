@@ -145,13 +145,7 @@ function App() {
 
       {/* Paginación */}
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "0.5rem",
-          marginTop: "1rem",
-          flexWrap: "wrap",
-        }}
+        className="pagination"
       >
         <button onClick={() => setPage((p) => p - 1)} disabled={page === 1}>
           ⬅
