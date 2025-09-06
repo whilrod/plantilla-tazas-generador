@@ -1,5 +1,4 @@
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8080";
-console.log("🌍 API_BASE desde Vite:", API_BASE);
 
 export async function fetchImages(page = 1, limit = 20) {
   const res = await fetch(`${API_BASE}/images?page=${page}&limit=${limit}`);
