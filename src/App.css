@@ -115,8 +115,8 @@
   }
 
   .button-reset, button {
-    padding: 6px;
-    font-size: 18px;
+    padding: 8px;
+    font-size: 20px;
     margin: 8px;
     cursor: pointer;
   }
