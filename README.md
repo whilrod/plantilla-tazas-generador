@@ -1,12 +1,73 @@
-# React + Vite
+# 📷 Generador de Plantillas - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/TU_BADGE_ID/deploy-status)](https://app.netlify.com/sites/plantillastazas/deploys)
+![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-4.0-purple?logo=vite)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Currently, two official plugins are available:
+Aplicación frontend construida con **React + Vite**, desplegada en **Netlify**, que permite visualizar imágenes, filtrarlas por hashtags y generar plantillas en PDF.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Características
+- 🔍 Búsqueda por hashtag
+- 📦 Selección múltiple de imágenes
+- 📄 Generación de PDFs con las imágenes seleccionadas
+- 🎨 Responsive Design (mobile-first)
+- ⚡ Desplegado en **Netlify**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Estructura del proyecto
+![alt text](image.png)
+
+
+
+---
+
+## ⚙️ Instalación local
+1. Clonar el repositorio:
+   git clone https://github.com/tuusuario/frontGeneraPlantilla.git
+   cd frontGeneraPlantilla
+
+2. Instalar dependencias:
+    npm install
+
+3. Configurar variables de entorno en .env:
+    VITE_API_URL=https://back-tazas-generador.onrender.com
+
+4. Levantar el servidor:
+    npm run dev
+
+👉 Abre http://localhost:5173
+
+🌍 Despliegue en Netlify
+
+Build Command: npm run build
+
+Publish Directory: dist
+
+Variables de entorno:
+
+🌍 Despliegue en Netlify
+
+Build Command: npm run build
+
+Publish Directory: dist
+
+Variables de entorno:
+
+VITE_API_URL=https://back-tazas-generador.onrender.com
+
+
+![alt text](image-1.png) ![alt text](image-2.png) ![alt text](image-3.png)
+
+🛠️ Tecnologías utilizadas
+
+React + Vite
+
+JavaScript (ES6+)
+
+CSS Grid + Media Queries
+
+Netlify
