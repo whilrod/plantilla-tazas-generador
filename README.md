@@ -33,7 +33,7 @@ Patrón Backend for Frontend (BFF): el backend en Go responde de forma específi
 
 Cache-Aside Pattern: el frontend mantiene en caché los recursos (imágenes) para reducir llamadas cuando el backend está “dormido”.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/TU_BADGE_ID/deploy-status)](https://app.netlify.com/sites/plantillastazas/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ebd4ca98-535f-4ee6-98d6-bd062ff95516/deploy-status)](https://app.netlify.com/projects/plantillastazas/deploys)
 ![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-4.0-purple?logo=vite)
 ![License](https://img.shields.io/badge/license-MIT-green)
