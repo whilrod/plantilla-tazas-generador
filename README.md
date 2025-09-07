@@ -60,7 +60,7 @@ Variables de entorno:
 VITE_API_URL=https://back-tazas-generador.onrender.com
 
 
-![alt text](image-1.png) ![alt text](image-2.png) ![alt text](image-3.png)
+![alt text](image-1.png) ![alt text](image-2.png) ![alt text](image-3.png)![alt text](image-4.png) ![alt text](image-5.png)
 
 🛠️ Tecnologías utilizadas
 
