@@ -1,11 +1,43 @@
+
 # 📷 Generador de Plantillas - Frontend
+
+## Aplicación frontend construida con **React + Vite**, desplegada en **Netlify**, que permite visualizar imágenes, filtrarlas por hashtags y generar plantillas en PDF.
+
+### 🔹 Tipo de arquitectura
+
+👉 Es una arquitectura distribuida basada en microservicios / servicios independientes:
+
+Frontend (Netlify) → es un cliente SPA (React) que consume APIs.
+
+Backend (Render) → servicio independiente que expone un API REST.
+
+Database (Xata/Postgres) → gestionada como servicio independiente (DBaaS).
+
+Storage / Cache (Service Worker) → manejado en el navegador, como mecanismo de optimización.
+
+📌 Esto se parece mucho a un modelo Jamstack + Backend desacoplado:
+
+Jamstack porque el frontend se despliega como estáticos en Netlify.
+
+Backend desacoplado porque la API vive aparte en Render.
+
+DBaaS (Xata) como otro servicio administrado.
+
+Patrón de diseño
+
+👉 Lo que aplicaste es una arquitectura de microservicios distribuida con:
+
+Separación de responsabilidades (SoC).
+
+Patrón Backend for Frontend (BFF): el backend en Go responde de forma específica a las necesidades del frontend.
+
+Cache-Aside Pattern: el frontend mantiene en caché los recursos (imágenes) para reducir llamadas cuando el backend está “dormido”.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/TU_BADGE_ID/deploy-status)](https://app.netlify.com/sites/plantillastazas/deploys)
 ![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-4.0-purple?logo=vite)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Aplicación frontend construida con **React + Vite**, desplegada en **Netlify**, que permite visualizar imágenes, filtrarlas por hashtags y generar plantillas en PDF.
 
 ---
 
