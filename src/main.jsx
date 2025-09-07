@@ -14,10 +14,10 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("/service-worker.js")
       .then((registration) => {
-        console.log("✅ Service Worker registrado:", registration);
+        //console.log("✅ Service Worker registrado:", registration);
       })
       .catch((error) => {
-        console.log("❌ Error registrando el SW:", error);
+        //console.log("❌ Error registrando el SW:", error);
       });
   });
 }

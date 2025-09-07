@@ -8,7 +8,7 @@ const APP_SHELL = ["/", "/index.html"];
 
 // Instalar el Service Worker
 self.addEventListener("install", (event) => {
-  console.log("📥 Service Worker instalado");
+  //console.log("📥 Service Worker instalado");
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(APP_SHELL);
@@ -19,13 +19,13 @@ self.addEventListener("install", (event) => {
 
 // Activar y limpiar cachés viejas
 self.addEventListener("activate", (event) => {
-  console.log("⚡ Service Worker activado");
+  //console.log("⚡ Service Worker activado");
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME && key !== IMAGE_CACHE) {
-            console.log("🗑️ Borrando cache vieja:", key);
+            //console.log("🗑️ Borrando cache vieja:", key);
             return caches.delete(key);
           }
         })
@@ -45,7 +45,7 @@ self.addEventListener("fetch", (event) => {
       caches.open(IMAGE_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
           if (cached) {
-            console.log("✅ Sirviendo desde cache:", url);
+            //console.log("✅ Sirviendo desde cache:", url);
             return cached;
           }
 
@@ -55,7 +55,7 @@ self.addEventListener("fetch", (event) => {
               return res;
             })
             .catch(() => {
-              console.warn("⚠️ No se pudo obtener:", url);
+              //console.warn("⚠️ No se pudo obtener:", url);
             });
         })
       )
