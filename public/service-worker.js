@@ -39,13 +39,12 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const url = event.request.url;
 
-  // Solo interceptar imágenes de tu backend
-  if (url.includes("/images")) {
+  // Solo interceptar imágenes del backend con GET
+  if (url.includes("/images") && event.request.method === "GET") {
     event.respondWith(
       caches.open(IMAGE_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
           if (cached) {
-            //console.log("✅ Sirviendo desde cache:", url);
             return cached;
           }
 
@@ -55,7 +54,7 @@ self.addEventListener("fetch", (event) => {
               return res;
             })
             .catch(() => {
-              //console.warn("⚠️ No se pudo obtener:", url);
+              // opcional: mostrar placeholder
             });
         })
       )
