@@ -2,32 +2,63 @@ import React, { useState } from "react";
 import "../App.css";
 
 export function HashtagSearch({ onSearch }) {
-  const [input, setInput] = useState("");
+  const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const tags = input.split(",").filter(Boolean);
+     clearCache(); // limpia antes de buscar
+  const tags = value.split(",").filter(Boolean);
     onSearch(tags);
   };
+
+  const handleClear = () => {
+    setValue("");
+    //onSearch(""); // opcional: notificar al padre que se limpió
+  };
+
+  // 🔹 función para limpiar caché desde el front
+const clearCache = () => {
+  if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.controller.postMessage("CLEAR_CACHE");
+  }
+};
 
   return (
     <>
     <form onSubmit={handleSubmit} >
+      <div className="clearable-input-container">
       <input
         type="text"
         placeholder="Buscar por hashtag"
         id="search"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        className="clearable-input"
       />
+
+      {value && (
+        <button
+          type="button"
+          className="clear-btn"
+          onClick={handleClear}
+          
+        >
+          ❌
+        </button>
+      )}
+      </div>
       <button
         type="submit"
       >
         🔍
       </button>
       <button 
+        type="button"
         className="button-reset reset"
-        onClick={() => window.location.reload()} 
+        onClick={() => {
+        clearCache();
+        window.location.reload();
+      }}
       >
         <span>🔄 </span>
       </button>

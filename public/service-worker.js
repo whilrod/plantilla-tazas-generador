@@ -61,3 +61,12 @@ self.addEventListener("fetch", (event) => {
     );
   }
 });
+
+// 🔹 Limpiar caché manualmente con mensajes
+self.addEventListener("message", (event) => {
+  if (event.data === "CLEAR_CACHE") {
+    caches.keys().then((keys) =>
+      Promise.all(keys.map((key) => caches.delete(key)))
+    );
+  }
+});
