@@ -47,15 +47,14 @@ self.addEventListener("fetch", (event) => {
           if (cached) {
             return cached;
           }
-
           return fetch(event.request)
-            .then((res) => {
-              cache.put(event.request, res.clone());
-              return res;
-            })
-            .catch(() => {
+          .then((res) => {
+            cache.put(event.request, res.clone());
+            return res;
+          })
+          .catch(() => {
               // opcional: mostrar placeholder
-            });
+          });
         })
       )
     );
@@ -66,7 +65,7 @@ self.addEventListener("fetch", (event) => {
 self.addEventListener("message", (event) => {
   if (event.data === "CLEAR_CACHE") {
     caches.keys().then((keys) =>
-      Promise.all(keys.map((key) => caches.delete(key)))
-    );
+    Promise.all(keys.map((key) => caches.delete(key)))
+  );
   }
 });

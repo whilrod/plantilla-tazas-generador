@@ -3,19 +3,6 @@ import "../App.css";
 
 export function HashtagSearch({ onSearch }) {
   const [value, setValue] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-     clearCache(); // limpia antes de buscar
-  const tags = value.split(",").filter(Boolean);
-    onSearch(tags);
-  };
-
-  const handleClear = () => {
-    setValue("");
-    //onSearch(""); // opcional: notificar al padre que se limpió
-  };
-
   // 🔹 función para limpiar caché desde el front
 const clearCache = () => {
   if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
@@ -23,13 +10,35 @@ const clearCache = () => {
   }
 };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    clearCache(); // limpia antes de buscar
+    const tags = value
+    .split(",")
+    .map((t) => t.trim())
+    .filter(Boolean);
+    
+    // separar positivos de negativos
+    const includeTags = tags.filter((t) => !t.startsWith("-"));
+    const excludeTags = tags
+      .filter((t) => t.startsWith("-"))
+      .map((t) => t.slice(1));
+    onSearch({include: includeTags, exclude: excludeTags});
+    };
+
+  const handleClear = () => {
+    setValue("");
+    onSearch({ include: [], exclude: [] });
+    //onSearch(""); // opcional: notificar al padre que se limpió
+  };
+
   return (
     <>
     <form onSubmit={handleSubmit} >
       <div className="clearable-input-container">
       <input
         type="text"
-        placeholder="Buscar por hashtag"
+        placeholder="Buscar por hashtag (usa - para excluir)"
         id="search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
@@ -41,8 +50,7 @@ const clearCache = () => {
           type="button"
           className="clear-btn"
           onClick={handleClear}
-          
-        >
+       >
           ❌
         </button>
       )}
@@ -64,7 +72,8 @@ const clearCache = () => {
       </button>
     </form>
     <label htmlFor="search">
-        Escribe hashtags separados por coma (<b style={{color:"blue"}}>,</b>) <i>ejemplo: mujer,feliz_dia</i>
+        Escribe hashtags separados por coma (<b style={{color:"blue"}}>,</b>) y usa (<b style={{ color: "red" }}>-</b>) delante para excluir hashtags. <br />
+        <i>Ejemplo: mujer,-triste</i>
         </label>
     </>
     
