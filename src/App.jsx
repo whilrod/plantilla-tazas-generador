@@ -5,7 +5,7 @@ import { HashtagSearch } from "./components/HashTagSearch";
 
 function App() {
   const [images, setImages] = useState([]);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState({ include: [], exclude: [] });
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
@@ -24,7 +24,7 @@ function App() {
   const loadData = async () => {
     try {
       let data;
-      if (isSearching && tags.length > 0) {
+      if (isSearching && (tags.include.length > 0 || tags.exclude.length > 0)) {
         data = await fetchImagesByHashtag(tags, page);
       } else {
         data = await fetchImages(page);
@@ -43,7 +43,10 @@ function App() {
   const handleSearch = (newTags) => {
     setTags(newTags);
     setPage(1);
-    setIsSearching(newTags.length > 0);
+    // revisamos que haya al menos un include o un exclude
+    setIsSearching(
+      newTags.include.length > 0 || newTags.exclude.length > 0
+    );
   };
 
   // ✅ seleccionar/deseleccionar imágenes sumando/restando peso
