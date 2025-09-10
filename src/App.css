@@ -83,6 +83,37 @@
   background-color: #bebebe;
 }
 
+.clearable-input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.clearable-input {
+  padding: 6px 30px 6px 10px; /* espacio para la ❌ */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 200px;
+  font-size: 14px;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.clear-btn:hover {
+  color: #333;
+}
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
