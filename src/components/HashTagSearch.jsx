@@ -72,8 +72,8 @@ const clearCache = () => {
       </button>
     </form>
     <label htmlFor="search">
-        Escribe hashtags separados por coma (<b style={{color:"blue"}}>,</b>) y usa (<b style={{ color: "red" }}>-</b>) delante para excluir hashtags. <br />
-        <i>Ejemplo: mujer,-triste</i>
+        Escribe hashtags separados por coma (<b style={{color:"blue"}}>,</b>) y usa 
+        guión (<b style={{ color: "red" }}>-</b>) delante para excluir hashtags. <b><i>Ejemplo: mujer,-triste</i></b>
         </label>
     </>
     
