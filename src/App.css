@@ -24,6 +24,7 @@
   display: block;
   text-align: center;
   margin-bottom: 0.8rem;
+  margin-top: -8px;
 }
 
 .image-card:hover .overlay {
@@ -99,7 +100,7 @@
 .clear-btn {
   position: absolute;
   right: 5px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
@@ -142,14 +143,17 @@
 
   .header-container-up label {
     font-size: 14px;
-    color: #a7a7aa;
   }
 
   .button-reset, button {
-    padding: 8px;
+    padding: 4px;
     font-size: 20px;
     margin: 8px;
     cursor: pointer;
+  }
+
+  .button-reset {
+    margin: 2px;
   }
 
   .button-download {
@@ -160,9 +164,9 @@
 /* Tablets pequeñas (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
   button {
-    padding: 10px;
-    font-size: 17px;
-    margin-left: 10px;
+    padding: 6px;
+    font-size: 18px;
+    margin-left: 7px;
   }
 
   h1 { font-size: 2rem; }
@@ -171,8 +175,9 @@
   .header-container-up label { font-size: 16px; }
   .header-container-up input {
     font-size: 18px;
-    width: 320px;
+    width: 310px;
     padding: 8px;
+    padding-right: 40px;
   }
 
   .button-download {
@@ -180,13 +185,15 @@
   }
 
   .button-reset {
-    padding: 5px;
+    padding: 3px;
     font-size: 22px;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   .image-card span {
     margin-bottom: 1rem;
+    font-size: 18px;
+    margin-top: 0px;
   }
 }
 
@@ -217,6 +224,11 @@
   .button-reset {
     font-size: 1.4rem;
     padding: 0.6rem;
+  }
+
+  .image-card span {
+    font-size: 18px;
+    margin-top: -6px;
   }
 
   h1 { font-size: 3rem; }
