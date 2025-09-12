@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden; /* evita que se desplace horizontalmente */
+}
+
 .image-grid {
   display: grid;
   gap: 16px;
@@ -114,6 +118,36 @@
   color: #333;
 }
 
+.category-nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Oculta scrollbar en Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  cursor: grab;
+  width: 100%;
+  max-width: 95vw;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none; /* Oculta scrollbar en Chrome/Safari */
+}
+
+.category-btn {
+  margin-right: -7px; /* 👈 reemplaza gap */
+  flex: 0 0 auto;
+  padding: 3px 20px;
+  border: none;
+  border-radius: 1px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-btn:hover {
+  background: #777;
+  color: #dedede;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
