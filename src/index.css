@@ -3,8 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -129,20 +127,45 @@ reset {
   100% { transform: rotate(360deg); }
 }
 
+/* 🌙 Tema oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+
+  header {
+    background-color: #242424;
+  }
+
+  .image-card {
+    background-color: #3d3c3c;
+  }
+
+  .category-btn {
+    background: #454545;
+    color: #6aa0d1;
+  }
+}
+
+/* ☀️ Tema claro */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    color: #f9f9f9;
-  }
 
   header {
     background-color: #dbdbdb;
+  }
+
+  .category-btn {
+    background: #bdbdbd;
+    color: #171717;
+  }
+
+  .category-btn:hover {
+    background: #dddddd;
   }
 
   .hashtag {

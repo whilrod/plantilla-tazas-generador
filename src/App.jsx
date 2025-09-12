@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchImages, fetchImagesByHashtag } from "./services/api.js";
 import { ImageList } from "./components/ImageList";
 import { HashtagSearch } from "./components/HashTagSearch";
+import { CategoryNav } from "./components/CategoryNav";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -79,6 +80,13 @@ function App() {
     return pageNumbers;
   };
 
+  const handleCategorySelect = (cat) => {
+    // 👇 Al hacer click en una categoría, dispara búsqueda con esa etiqueta
+    setTags({ include: [cat], exclude: [] });
+    setPage(1);
+    setIsSearching(true);
+  };
+
   return (
     <div>
       <header
@@ -94,6 +102,7 @@ function App() {
           <h1>📷 Galería de Imágenes</h1>
           <HashtagSearch onSearch={handleSearch} />
         </div>
+        
           <div className="header-container-down">
             <h2 style={{ marginTop: "0.5rem" }}>
           Imágenes seleccionadas: {selected.length}
@@ -133,7 +142,10 @@ function App() {
               `📄 Descargar Plantillas (${Math.ceil(selected.length / 3)}) — ${totalSizeMB} MB`
             )}
           </button>
-        )}</div>
+        )}
+      
+        </div>
+        <CategoryNav onSelect={handleCategorySelect} />
       </header>
 
       {/* ✅ pasamos selected y toggleSelect */}
