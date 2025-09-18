@@ -9,7 +9,7 @@ export function CategoryNav({ onSelect }) {
     "Mujer",
     "Futbol",
     "imagenes",
-    "Suoerheroes",
+    "Superheroes",
     "Amor",
     "Amistad",
   ];
