@@ -91,8 +91,6 @@ function App() {
     <div>
       <header
         style={{
-          position: "sticky",
-          top: 0,
           zIndex: 1000,
           padding: "1rem",
           borderBottom: "1px solid #ddd",
@@ -102,11 +100,24 @@ function App() {
           <h1>📷 Galería de Imágenes</h1>
           <HashtagSearch onSearch={handleSearch} />
         </div>
-        
-          <div className="header-container-down">
-            <h2 style={{ marginTop: "0.5rem" }}>
+      </header>  
+          <div className="header-container-down"
+            style={{
+              position: "sticky",
+              top: 0,
+              background: "#dbdbdb",
+              padding: "1rem",
+              borderTop: "1px solid #ddd",
+              zIndex: 1001,
+              display: "flex",       // 👈 flexbox
+              flexDirection: "column",
+            }}
+          >
+            <h2 
+            style={{ marginTop: "0.5rem" }}>
           Imágenes seleccionadas: {selected.length}
-        </h2>{selected.length > 0 && (
+        </h2>
+        {selected.length > 0 && (
           <button
             className="button-download"
             onClick={async () => {
@@ -143,12 +154,11 @@ function App() {
             )}
           </button>
         )}
-      
+        <div style={{ marginTop: "auto" }}>
+          <CategoryNav onSelect={handleCategorySelect} />
         </div>
-        <CategoryNav onSelect={handleCategorySelect} />
-      </header>
-
-      {/* ✅ pasamos selected y toggleSelect */}
+      </div>
+    {/* ✅ pasamos selected y toggleSelect */}
       <ImageList
         images={images}
         selected={selected}

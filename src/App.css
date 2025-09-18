@@ -1,5 +1,5 @@
 html, body {
-  overflow-x: hidden; /* evita que se desplace horizontalmente */
+  overflow-x: visible; /* evita que se desplace horizontalmente */
 }
 
 .image-grid {
