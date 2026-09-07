@@ -11,7 +11,7 @@ Frontend (Netlify) → es un cliente SPA (React) que consume APIs.
 
 Backend (Render) → servicio independiente que expone un API REST.
 
-Database (Xata/Postgres) → gestionada como servicio independiente (DBaaS).
+Database (Supabase) → gestionada como servicio independiente (DBaaS).
 
 Storage / Cache (Service Worker) → manejado en el navegador, como mecanismo de optimización.
 
@@ -21,7 +21,7 @@ Jamstack porque el frontend se despliega como estáticos en Netlify.
 
 Backend desacoplado porque la API vive aparte en Render.
 
-DBaaS (Xata) como otro servicio administrado.
+DBaaS (Supabase) como otro servicio administrado.
 
 Patrón de diseño
 
